@@ -1,0 +1,152 @@
+import 'package:eduwave/common/userVote/model/user_vote_model_class_entity.dart';
+import 'package:eduwave/common/userVote/presenter/UserVotePresenter.dart';
+import 'package:eduwave/common/userVote/view/UserVoteView.dart';
+import 'package:eduwave/common/userVote/view/charts-master/charts_flutter/src/bar_chart.dart';
+import 'package:eduwave/resources/AppColors.dart';
+import 'package:eduwave/resources/Dimens.dart';
+import 'package:eduwave/resources/Strings.dart';
+import 'package:eduwave/resources/Styles.dart';
+import 'package:flutter/material.dart';
+import 'package:eduwave/common/userVote/view/charts-master/charts_common/common.dart'
+as common;
+
+import 'charts-master/charts_common/chart/cartesian/axis/spec/percent_axis_spec.dart';
+
+class UserVoteItem extends StatefulWidget {
+  final List<UserVoteModelClassDataVotesList> model;
+  final UserVoteView view;
+  final int index;
+  final Function getAnswerId;
+  final UserVotePresenter userVotePresenter;
+
+  const UserVoteItem({Key key,
+    @required this.model,
+    @required this.view,
+    this.index,
+    this.userVotePresenter,
+    this.getAnswerId})
+      : super(key: key);
+
+  @override
+  createState() => UserVoteItemState();
+}
+
+class UserVoteItemState extends State<UserVoteItem> {
+  UserVoteModelClassDataVotesList voteModel;
+  UserVoteModelClassDataVotesListAnswersList voteAnswersModel;
+  bool showResults = false;
+  bool canSubmit = false;
+  int numOfIndex = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    this.voteModel = widget?.model[widget?.index];
+    this.voteAnswersModel =
+    widget.model[widget.index].answersList[widget.index];
+    return Card(
+        elevation: DIMEN_2,
+        color: WHITE,
+        margin: EdgeInsets.symmetric(horizontal: DIMEN_10, vertical: DIMEN_5),
+        child: Padding(
+            padding: EdgeInsets.all(DIMEN_20),
+            child: Column(mainAxisSize: MainAxisSize.max, children: <Widget>[
+              Row(mainAxisSize: MainAxisSize.max, children: <Widget>[
+                widget.model == null
+                    ? Container()
+                    : Expanded(
+                    child: Text(this?.voteModel?.voteDescription ?? "",
+                        style: TITLE_TILE_TEXT_STYLE_LANGUAGE,
+                        overflow: TextOverflow.clip))
+              ]),
+              Padding(
+                padding: const EdgeInsets.only(top: DIMEN_10),
+                child:
+                Column(mainAxisSize: MainAxisSize.min, children: <Widget>[
+                  Container(
+                    child: Column(
+                      children: <Widget>[
+                        ListView.builder(
+                          shrinkWrap: true,
+                          itemCount:
+                          widget.model[widget.index].answersList.length ??
+                              0,
+                          itemBuilder: (context, index) =>
+                              InkWell(
+                                splashColor: Colors.transparent,
+                                onTap: () {
+                                  widget.model[widget.index].answersList
+                                      .forEach((answer) {
+                                    if (widget.model[widget.index].answersList
+                                        .indexOf(answer) ==
+                                        index) {
+                                      answer.checked = true;
+                                      if (widget.getAnswerId != null) {
+                                        widget.getAnswerId(answer.answerId);
+                                      }
+                                    } else {
+                                      answer.checked = false;
+                                    }
+                                    setState(() {
+                                      widget.model[widget.index].checked = true;
+                                    });
+                                  });
+                                  canSubmit = true;
+
+                                },
+                                child: UserVoteRow(
+                                    index: index,
+                                    checked:
+                                    this?.voteModel.answersList[index].checked,
+                                    answerTxt: this
+                                        ?.voteModel
+                                        .answersList[index]
+                                        .answerDescription),
+                              ),
+                        ),
+                      ],
+                    ),
+                  )
+                ]),
+              ),
+              Row(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: <Widget>[
+                    GestureDetector(
+                        onTap: () {
+                          if (this.voteModel.voteAnswerId != null ||
+                              canSubmit == false) {
+                            print("${this.voteModel.voteAnswerId}");
+                          } else {
+                            onClickSubmit();
+                            setState(() =>
+                            widget.model[widget.index].voteAnswerId = widget
+                                .model[widget.index].answersList
+                                ?.firstWhere((a) => a.checked)
+                                ?.answerId);
+                          }
+                        },
+                        child: Padding(
+                            key: GlobalKey(),
+                            padding: EdgeInsetsDirectional.only(
+                                top: DIMEN_20, end: DIMEN_20),
+                            child: (this.voteModel?.voteAnswerId != null)
+                                ? Text(Strings.submit().toUpperCase(),
+                                style: TITLE_APP_BAR_GRAY)
+                                : Text(Strings.submit().toUpperCase(),
+                                style: canSubmit
+                                    ? TITLE_APP_BAR_BLUE
+                                    : TITLE_APP_BAR_GRAY))),
+                    Center(
+                      child: GestureDetector(
+                          onTap: () {
+                            if (this.voteModel?.voteAnswerId != null)
+                              setState(() => showResults = true);
+                            else
+                              return null;
+                          },
+                          child: Padding(
+                              padding:
+                              EdgeInsetsDirectional.only(top: DIMEN_20),
+                              child: (this.voteModel?.voteAnswerId == null)
+ 

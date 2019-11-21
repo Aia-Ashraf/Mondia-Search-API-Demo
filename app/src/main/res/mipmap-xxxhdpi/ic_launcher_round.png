@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="6e200f90-54d7-44fe-a60b-9974d4b6d121" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/lib/common/userVote/view/UserVoteItem.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/common/userVote/view/UserVoteItem.dart" afterDir="false" />
+    </list>
+    <list id="fa9e9edc-5554-4b84-8a3a-04e5fbeaa690" name="eduwave update" comment="eduwave update" />
+    <list id="3b1095be-25f0-4145-a848-36bcfdd4ef62" name="userVote" comment="" />
+    <ignored path="E:\Aia\Projects\EduWaveApp_Flutter\.idea\shelf/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="isMigrated" value="true" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="Nexus_9_API_P" />
+  <component name="FavoritesManager">
+    <favorites_list name="EduWaveApp_Flutter" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/common/userVote/view/UserVoteItem.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="154" column="63" selection-start-line="154" selection-start-column="63" selection-end-line="154" selection-end-column="63" />
+              <folding>
+                <element signature="e#0#81#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/common/userVote/presenter/UserVotePresenter.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="166">
+              <caret line="43" column="8" selection-start-line="43" selection-start-column="8" selection-end-line="43" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/common/userVote/repository/UserVoteRepository.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="22" column="14" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="14" />
+              <folding>
+                <element signature="e#0#20#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/common/userVote/view/MobileUserVote.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="629">
+              <caret line="43" column="7" selection-start-line="43" selection-start-column="7" selection-end-line="43" selection-end-column="7" />
+              <folding>
+                <element signature="e#0#22#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/lib/common/userVote/repository/SubmitRepo.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="38">
+              <caret line="35" column="7" selection-start-line="35" selection-start-column="7" selection-end-line="35" selection-end-column="7" />
+              <folding>
+                <element signature="e#0#20#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/base/BaseView.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="7" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/common/userVote/view/charts-master/charts_flutter/src/bar_chart.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="42" column="2" selection-start-line="42" selection-start-column="2" selection-end-line="42" selection-end-column="2" />
+              <folding>
+                <element signature="e#645#689#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="918">
+              <caret line="54" selection-start-line="54" selection-end-line="54" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pubspec.yaml">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/common/userVote/view/charts-master/charts_common/data/series.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1054">
+              <caret line="80" column="40" selection-start-line="80" selection-start-column="40" selection-end-line="80" selection-end-column="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Dart File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>The From GPA field should have a value between 0.0 and 4.0 and less than 4.0</find>
+      <find>privqa</find>
+      <find>زياد</find>
+      <find>CH</find>
+      <find>show res</find>
+      <find>box</find>
+      <find>Dotted</find>
+      <find>vote_description</find>
+      <find>chart</find>
+      <find>321</find>
+      <find>ans</find>
+      <find>vote_result_list</find>
+      <find>)</find>
+      <find>.map((f)</find>
+      <find>UserVoteModelClassDataVotesList</find>
+      <find>inkw</find>
+      <find>.where((</find>
+      <find>Answers_list</find>
+      <find>des</find>
+      <find>singlev</find>
+      <find>si</find>
+      <find>toJson()</find>
+      <find>yaml</find>
+      <find>pubs</find>
+      <find>char</find>
+      <find>BarChart</find>
+      <find>singl</find>
+      <find>subm</find>
+      <find>submitted</find>
+      <find>onvo</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>mModel</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="refactoring" />
+      </map>
+    </option>
+    <option name="RESET_MODE" value="HARD" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/lib/common/newTask/view/KidsNewTaskScreen.dart" />
+        <option value="$PROJECT_DIR$/lib/common/notePage/views/TabletNotePage.dart" />
+        <option value="$PROJECT_DIR$/lib/base/NotificationHandler.dart" />
+        <option value="$PROJECT_DIR$/lib/common/splash/view/SplashScreen.dart" />
+        <option value="$PROJECT_DIR$/lib/teacher/studentDetailedInformation/model/StudentInfo.dart" />
+        <option value="$PROJECT_DIR$/lib/teacher/studentDetailedInformation/view/ProfileInfoScreen.dart" />
+        <option value="$PROJECT_DIR$/lib/common/tablet/TabletNavigationDrawerWidget.dart" />
+        <option value="$PROJECT_DIR$/lib/common/newTask/view/tablet/TabletNewTaskScreen.dart" />
+        <option value="$PROJECT_DIR$/lib/common/newTask/view/BaseNewTaskScreen.dart" />
+        <option value="$PROJECT_DIR$/lib/base/BaseTabletStatefulState.dart" />
+        <option value="$PROJECT_DIR$/lib/student/complainsAndSuggestions/view/NewComplainAndSuggestion.dart" />
+        <option value="$PROJECT_DIR$/lib/student/complainsAndSuggestions/view/ComplainsAndSuggestionsScreen.dart" />
+        <option value="$PROJECT_DIR$/lib/customwidget/CompAndSuggListItem.dart" />
+        <option value="$PROJECT_DIR$/lib/common/landingPage/view/FirstScreen.dart" />
+        <option value="$PROJECT_DIR$/lib/common/notePage/presenter/NotePagePresenter.dart" />
+        <option value="$PROJECT_DIR$/lib/resources/Strings.dart" />
+        <option value="$PROJECT_DIR$/lib/PlanTranscript/View/PlanTranscriptScreen.dart" />
+        <option value="$PROJECT_DIR$/lib/teacher/advisorRegistration/model/repository/AdvisorRefineRepository.dart" />
+        <option value="$PROJECT_DIR$/lib/teacher/advisorRegistration/model/AdvisorStudentsResponse.dart" />
+        <option value="$PROJECT_DIR$/lib/teacher/advisorRegistration/model/AdvisorRefineData.dart" />
+        <option value="$PROJECT_DIR$/lib/teacher/advisorRegistration/view/advisorRegistrationRefine/BaseAdvisorRegistrationRefine.dart" />
+        <option value="$PROJECT_DIR$/lib/teacher/studentDetailedInformation/view/StudentDetailInfoScreen.dart" />
+        <option value="$PROJECT_DIR$/lib/waveerp/layouts/mainSalariesScreens/view/SalaryScreen.dart" />
+        <option value="$PROJECT_DIR$/lib/waveerp/layouts/mainSalariesScreens/view/mobile/MobileSalaryScreen.dart" />
+        <option value="$PROJECT_DIR$/lib/waveerp/waveerp_resources/ArbStrings.dart" />
+        <option value="$PROJECT_DIR$/lib/common/notePage/views/NotePage.dart" />
+        <option value="$PROJECT_DIR$/lib/common/notePage/model/UploadFileModel.dart" />
+        <option value="$PROJECT_DIR$/lib/common/notePage/views/MobileNote.dart" />
+        <option value="$PROJECT_DIR$/lib/common/notePage/views/noteAdd/AddNote.dart" />
+        <option value="$PROJECT_DIR$/lib/student/registration/views/MobileRegistrationRecordPage.dart" />
+        <option value="$PROJECT_DIR$/lib/student/registration/views/TabletRegistrationRecordPage.dart" />
+        <option value="$PROJECT_DIR$/lib/student/registration/model/MainRegistrationPageModel.dart" />
+        <option value="$PROJECT_DIR$/lib/common/courses/model/course.dart" />
+        <option value="$PROJECT_DIR$/lib/student/registration/views/RegistrationRecordPage.dart" />
+        <option value="$PROJECT_DIR$/lib/resources/Styles.dart" />
+        <option value="$PROJECT_DIR$/lib/customwidget/StatusRow.dart" />
+        <option value="$PROJECT_DIR$/lib/kidsResources/AppColors.dart" />
+        <option value="$PROJECT_DIR$/lib/common/myschedule/view/kids/KidsCourseRowStatelessWidget.dart" />
+        <option value="$PROJECT_DIR$/lib/common/myschedule/view/kids/KidsMySchedulePage.dart" />
+        <option value="$PROJECT_DIR$/lib/common/myschedule/view/tablet/TabletSchedulePage.dart" />
+        <option value="$PROJECT_DIR$/lib/common/home/view/HomePageNavigatorController.dart" />
+        <option value="$PROJECT_DIR$/lib/common/notePage/views/noteAdd/AddNoteMobile.dart" />
+        <option value="$PROJECT_DIR$/lib/teacher/advisorRegistration/view/advisorRegistrationList/BaseAdvisorRegistartion.dart" />
+        <option value="$PROJECT_DIR$/lib/resources/ArbStrings.dart" />
+        <option value="$PROJECT_DIR$/lib/student/complainsAndSuggestions/view/CompAndSuggRefineScreen.dart" />
+        <option value="$PROJECT_DIR$/lib/resources/EngStrings.dart" />
+        <option value="$PROJECT_DIR$/lib/common/userVote/model/user_vote_model_class_entity.dart" />
+        <option value="$PROJECT_DIR$/lib/common/userVote/view/UserVoteScreen.dart" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/lib/common/userVote/view/MobileUserVote.dart" />
+        <option value="$PROJECT_DIR$/lib/common/userVote/view/UserVoteItem.dart" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="90" />
+    <option name="y" value="88" />
+    <option name="width" value="697" />
+    <option name="height" value="735" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="EduWaveApp_Flutter" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EduWaveApp_Flutter" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EduWaveApp_Flutter" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EduWaveApp_Flutter" type="462c0819:PsiDirectoryNode" />
+              <item name="android" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EduWaveApp_Flutter" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EduWaveApp_Flutter" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EduWaveApp_Flutter" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EduWaveApp_Flutter" type="462c0819:PsiDirectoryNode" />
+              <item name="kids_images" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EduWaveApp_Flutter" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EduWaveApp_Flutter" type="462c0819:PsiDirectoryNode" />
+              <item name="kids_images" type="462c0819:PsiDirectoryNode" />
+              <item name="1x" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EduWaveApp_Flutter" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EduWaveApp_Flutter" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" 

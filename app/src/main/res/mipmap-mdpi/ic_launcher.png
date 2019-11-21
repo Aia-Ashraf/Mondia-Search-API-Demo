@@ -1,0 +1,51 @@
+import 'dart:convert';
+import 'package:eduwave/PlanTranscript/Model/OutOfPlanCoursesList.dart';
+import 'package:eduwave/PlanTranscript/Model/PlanTranscriptModelData.dart';
+import 'package:eduwave/PlanTranscript/Presenter/PlanTranscriptPresenter.dart';
+import 'package:eduwave/PlanTranscript/View/PlanTranscriptView.dart';
+import 'package:eduwave/base/BasePresenter.dart';
+import 'package:eduwave/base/BaseStatefulWidget.dart';
+import 'package:eduwave/base/BaseView.dart';
+import 'package:eduwave/common/studyPlan/model/StudyPlanCategory.dart';
+import 'package:eduwave/common/studyPlan/model/StudyPlanCourse.dart';
+import 'package:eduwave/customwidget/StatusRow.dart';
+import 'package:eduwave/resources/AppColors.dart';
+import 'package:eduwave/resources/Dimens.dart';
+import 'package:eduwave/resources/Images.dart';
+import 'package:eduwave/resources/Strings.dart';
+import 'package:eduwave/resources/Styles.dart';
+import 'package:eduwave/utilities/Config.dart';
+import 'package:eduwave/utilities/LayoutUtils.dart';
+import 'package:flutter/material.dart';
+
+abstract class PlanTranscriptScreen extends BaseStatefulWidget {
+  String studentAcademicSkey;
+  String currentCalendarEvent;
+  String semesterSkey;
+  PlanTranscriptScreen(
+      this.studentAcademicSkey, this.currentCalendarEvent, this.semesterSkey);
+}
+
+abstract class PlanTranscriptScreenState<T extends PlanTranscriptScreen>
+    extends BaseStatefulWidgetState<T> implements PlanTranscriptView {
+  PlanTranscriptModelData planTranscriptModelData;
+  bool isPlanCoursesHidden = true;
+  bool isOutOfPlanCoursesHidden = true;
+  GlobalKey key = GlobalKey();
+  List<String> headerParts = [];
+
+  PlanTranscriptScreenState();
+
+  @override
+  void init() {
+    super.init();
+    (this.basePresenter as PlanTranscriptPresenter)
+        .getStudyPlanSummeryAndCoursesList();
+  }
+
+  Widget buildCommonBody(BuildContext context) {
+    return planTranscriptModelData == null
+        ? Container()
+        : Column(children: <Widget>[
+            buildHeader(),
+       
