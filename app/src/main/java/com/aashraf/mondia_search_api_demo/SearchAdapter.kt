@@ -1,9 +1,10 @@
 package com.example.githubsearch
 
-import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
+import com.aashraf.mondia_search_api_demo.R
 import com.example.githubsearch.model.Items
 import kotlinx.android.synthetic.main.item_row.view.*
 

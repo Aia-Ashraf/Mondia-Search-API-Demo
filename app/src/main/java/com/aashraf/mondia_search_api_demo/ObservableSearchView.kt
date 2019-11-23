@@ -1,14 +1,13 @@
 package com.example.githubsearch
 
-import android.support.v7.widget.SearchView
 import android.util.Log
-import android.widget.Toast
 import com.example.githubsearch.model.BaseModel
 import io.reactivex.Observable
 import io.reactivex.schedulers.Schedulers
 import io.reactivex.subjects.PublishSubject
 
 import android.content.ContentValues.TAG
+import android.widget.SearchView
 import com.example.githubsearch.model.Items
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.annotations.NonNull
@@ -30,9 +29,6 @@ object ObServableSearchView {
     lateinit var gitHubSearchService: GitHubSearchService
 
 
-
-
-
     fun of(searchView: SearchView): Observable<String> {
         val subject = PublishSubject.create<String>()
 
@@ -52,4 +48,4 @@ object ObServableSearchView {
         })
         return subject
     }
-    }
+}

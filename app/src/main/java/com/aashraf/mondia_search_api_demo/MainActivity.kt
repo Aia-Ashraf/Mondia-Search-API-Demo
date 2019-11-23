@@ -11,6 +11,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.aashraf.mondia_search_api_demo.R
 import com.example.githubsearch.model.BaseModel
 import com.example.githubsearch.model.Items
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -84,11 +85,12 @@ class MainActivity : AppCompatActivity() {
             .observeOn(AndroidSchedulers.mainThread())
             .doOnEach {
             }
-            .doOnError {Log.d(TAG,"Error")
+            .doOnError {
+                Log.d(TAG, "Error")
             }
             .retry()
             .subscribe({
-                Log.d(TAG,"subs")
+                Log.d(TAG, "subs")
             }, {
                 Log.d(TAG, it.toString())
             })
@@ -139,7 +141,8 @@ class MainActivity : AppCompatActivity() {
             gHubAPI.searchGitHubRepo(query + "language:assembly", "stars", "desc")
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
-                .subscribe(this::handleResponse, this::handleError))
+                .subscribe(this::handleResponse, this::handleError)
+        )
     }
 
     fun handleResponse(baseModel: BaseModel) {
