@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.githubsearch.MainActivity">
+    tools:context="com.example.search.MainActivity">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -45,8 +45,4 @@
         tools:ignore="NotSibling"
         tools:listitem="@layout/item_row"></androidx.recyclerview.widget.RecyclerView>
 
-    <TextView
-        android:id="@+id/tv"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"></TextView>
 </LinearLayout>

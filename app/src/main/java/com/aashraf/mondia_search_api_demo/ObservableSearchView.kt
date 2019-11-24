@@ -1,24 +1,12 @@
-package com.example.githubsearch
+package com.example.search
 
 import android.util.Log
-import com.example.githubsearch.model.BaseModel
 import io.reactivex.Observable
-import io.reactivex.schedulers.Schedulers
 import io.reactivex.subjects.PublishSubject
 
 import android.content.ContentValues.TAG
 import android.widget.SearchView
-import com.example.githubsearch.model.Items
-import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.annotations.NonNull
 import io.reactivex.disposables.CompositeDisposable
-import io.reactivex.internal.util.HalfSerializer.onComplete
-import io.reactivex.internal.util.HalfSerializer.onNext
-import io.reactivex.observers.DisposableObserver
-import io.reactivex.plugins.RxJavaPlugins.onError
-import retrofit2.Retrofit
-import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
-import retrofit2.converter.gson.GsonConverterFactory
 
 object ObServableSearchView {
     lateinit var viewHolder: ChapterAdapter.ViewHolder
@@ -26,7 +14,6 @@ object ObServableSearchView {
     private var mCompositeDisposable: CompositeDisposable? = null
     lateinit var adapter: ChapterAdapter
     lateinit var mainActivity: MainActivity
-    lateinit var gitHubSearchService: GitHubSearchService
 
 
     fun of(searchView: SearchView): Observable<String> {

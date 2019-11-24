@@ -1,4 +1,4 @@
-package com.example.githubsearch
+package com.example.search
 
 import android.app.SearchManager
 import android.content.Context
@@ -12,30 +12,18 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.aashraf.mondia_search_api_demo.R
-import com.example.githubsearch.model.BaseModel
-import com.example.githubsearch.model.Items
+import com.aashraf.mondia_search_api_demo.model.mondiaModels.DataModel
+import com.example.search.model.BaseModel
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import io.reactivex.ObservableSource
 
-import com.example.githubsearch.ChapterAdapter.*
-import io.reactivex.functions.Consumer
+import com.example.search.ChapterAdapter.*
 import io.reactivex.functions.Predicate
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import java.util.concurrent.TimeUnit
-
-
-/* todo 1- complete the task */
-/*
-* https://www.uplabs.com
-* https://androidniceties.tumblr.com
-* http://wsdesign.in
-* https://dribbble.com/tags/material_design
-* https://www.sketchappsources.com/tag/android.html
-* https://colorwise.io */
 
 class MainActivity : AppCompatActivity() {
 
@@ -45,6 +33,8 @@ class MainActivity : AppCompatActivity() {
     lateinit var adapter: ChapterAdapter
     lateinit var viewHolder: ViewHolder
     lateinit var searchView: SearchView
+    lateinit var baseModel: BaseModel
+    lateinit var dataModel: ArrayList<DataModel>
     private var mCompositeDisposable: CompositeDisposable? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -54,10 +44,10 @@ class MainActivity : AppCompatActivity() {
         searchView = findViewById(R.id.searchView)
         layoutManager = LinearLayoutManager(this)
         recyclerView.layoutManager = layoutManager
-        adapter = ChapterAdapter(this, Items.getList())
+        adapter = ChapterAdapter(this, DataModel.getList())
         recyclerView.adapter = adapter
         mCompositeDisposable = CompositeDisposable()
-
+        getAccessToken()
         ObServableSearchView.of(searchView)
             .debounce(300, TimeUnit.MILLISECONDS)
             .filter(object : Predicate<String> {
@@ -75,12 +65,6 @@ class MainActivity : AppCompatActivity() {
                 }
             })
             .distinctUntilChanged()
-            /*     .switchMap(object : Function<String, ObservableSource<String>>() {
-                      @Throws(Exception::class)
-                      fun apply(query: String): ObservableSource<String> {
-                          return dataFromNetwork(query)
-                      }
-                  })*/
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .doOnEach {
@@ -106,53 +90,60 @@ class MainActivity : AppCompatActivity() {
             searchView.setSearchableInfo(searchManager.getSearchableInfo(componentName))
             searchView.setIconifiedByDefault(false)
         }
-        // todo while you already using rx in this project you can use it to enhance search michanism
-        // todo check ObServableSearchView.kt and investigate in some operators like interval, throttle, debounce
-
-        /*     searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
-
-                 override fun onQueryTextChange(newText: String): Boolean {
-                     Log.d(TAG, "onQueryTextChange: $newText")
-                     return false
-                 }
-                 override fun onQueryTextSubmit(query: String): Boolean {
-                     Log.d(TAG, "onQueryTextSubmit: $query")
-                     beginSearch(query)
-                     return false
-                 }
-             })*/
         return true
     }
 
     fun beginSearch(query: String) {
-        // todo fetching data is repository or interactor  responsibility- refactor it
-        // todo building retrofit api should be in the ApiClient.kt and rename it to something more meaningful
-
         val retrofit = Retrofit.Builder()
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .addConverterFactory(GsonConverterFactory.create())
-            .baseUrl("https://api.github.com/")
+            .baseUrl("http://staging-gateway.mondiamedia.com/")
             .build()
 
         viewHolder = ViewHolder(searchView)
-
-        val gHubAPI = retrofit.create(GitHubSearchService::class.java)
+        val mondiaAPI = retrofit.create(MondiaSearchAPI::class.java)
         mCompositeDisposable?.add(
-            gHubAPI.searchGitHubRepo(query + "language:assembly", "stars", "desc")
+            mondiaAPI.getData(
+                "Bearer " + baseModel.accessToken,
+                query ,
+                20
+            )
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
                 .subscribe(this::handleResponse, this::handleError)
         )
     }
 
-    fun handleResponse(baseModel: BaseModel) {
-        Log.d(TAG, "onResponse()" + baseModel)
-        baseModel?.items?.let { adapter.updateItems(it) }
+    fun handleResponse(dataModel: ArrayList<DataModel>) {
+        this.dataModel = dataModel
+        dataModel?.let { adapter.updateItems(it) }
+    }
+
+    fun getTokenResponse(baseModel: BaseModel) {
+        this.baseModel = baseModel
+
     }
 
     fun handleError(error: Throwable) {
-        Log.d(TAG, error.localizedMessage)
-        Toast.makeText(this, "Error ${error.localizedMessage}", Toast.LENGTH_SHORT).show()
     }
 
+
+    fun getAccessToken() {
+        val retrofit = Retrofit.Builder()
+            .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+            .addConverterFactory(GsonConverterFactory.create())
+            .baseUrl("http://staging-gateway.mondiamedia.com/")
+            .build()
+        viewHolder = ViewHolder(searchView)
+        val getwayToken = retrofit.create(AccessTokenAPI::class.java)
+        mCompositeDisposable?.add(
+            getwayToken.getAccessToken(
+                "application/x-www-form-urlencoded",
+                "Ge6c853cf-5593-a196-efdb-e3fd7b881eca"
+            )
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io())
+                .subscribe(this::getTokenResponse, this::handleError)
+        )
+    }
 }
