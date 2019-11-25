@@ -10,7 +10,7 @@ data class DataModel(
 //    val id: Int,
 //    val idBag: IdBag,
     val label: String,
-//    val mainArtist: MainArtist,
+    val mainArtist: MainArtist,
 //    val mainRelease: Boolean,
 //    val numberOfTracks: Int,
 //    val partialStreamable: Boolean,
@@ -29,7 +29,7 @@ data class DataModel(
 {
     companion object {
         fun getList(): List<DataModel> {
-            return listOf( DataModel(title = "",label = ""))
+            return listOf( DataModel(title = "",label = "",mainArtist = MainArtist("")))
         }
     }
 }

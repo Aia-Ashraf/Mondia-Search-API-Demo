@@ -8,14 +8,16 @@ import com.example.search.MainActivity
 
 class DetailsActivity : AppCompatActivity() {
 lateinit var artist:TextView
+lateinit var song:TextView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_details)
         artist=findViewById(R.id.tv_artist)
+        song=findViewById(R.id.song_name)
         val bundle:Bundle = intent.extras!!
-        val song = bundle.get("song")
-//        val language = bundle.get("language_value")
-        artist.text=song.toString()
-
+        val songg = bundle.get("song")
+        val artistt = bundle.get("artist")
+        artist.text="Artist Name :- "+artistt.toString()
+        song.text="Song Name :- "+songg.toString()
     }
 }

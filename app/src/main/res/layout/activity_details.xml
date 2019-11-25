@@ -6,16 +6,25 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".DetailsActivity">
+
     <TextView
+        android:id="@+id/song_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/song_name"></TextView>
-<TextView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:id="@+id/tv_artist"></TextView>
+        android:textSize="25dp"
+        android:layout_margin="20dp"></TextView>
+
     <TextView
+        android:id="@+id/tv_artist"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/tv_album"></TextView>
+        android:textSize="25dp"
+        android:layout_margin="20dp"></TextView>
+
+    <TextView
+        android:id="@+id/tv_album"
+        android:textSize="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"></TextView>
 </LinearLayout>

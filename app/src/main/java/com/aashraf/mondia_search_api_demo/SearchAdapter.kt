@@ -29,7 +29,7 @@ class ChapterAdapter(private val context: MainActivity, private var chaptersList
         holder.itemView.setOnClickListener {
             intent = Intent(context, DetailsActivity::class.java)
             intent.putExtra("song", chaptersList[position].label)
-            intent.putExtra("artist", 1)
+            intent.putExtra("artist", chaptersList[position].mainArtist.name)
             startActivity(context,intent, Bundle())
         }
     }
